@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ff6b9a">
+  <title>¡Feliz cumpleaños, Fruti!</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <div class="pink-circles" id="pink-circles" aria-hidden="true"></div>
+  <div class="party-decor" id="party-decor" aria-hidden="true"></div>
+  <video class="background-video" src="assets/background-video.mp4" muted loop playsinline preload="auto" aria-hidden="true"></video>
+  <audio class="background-audio" src="assets/background-audio.mp3" muted loop preload="auto" aria-hidden="true" hidden></audio>
+  <main class="scene">
+    <div class="top-video-stickers" aria-hidden="true"><video class="top-video-sticker" src="assets/sticker-1.mp4" autoplay loop muted playsinline preload="auto"></video><video class="top-video-sticker" src="assets/sticker-2.mp4" autoplay loop muted playsinline preload="auto"></video><video class="top-video-sticker" src="assets/sticker-3.mp4" autoplay loop muted playsinline preload="auto"></video><video class="top-video-sticker goat-video-sticker" src="assets/sticker-4.mp4" autoplay loop muted playsinline preload="auto" title="Sticker de baile"></video></div>
+    <h1>🎂¡Feliz cumpleaños, Fruti!🎂</h1>
+
+    <div class="envelope-wrap" id="card">
+      <div class="letter" aria-live="polite">
+        <div class="letter-decor" aria-hidden="true">
+          <span>🎈</span><span>🎉</span><span>🎁</span><span>⭐</span>
+          <span>🎊</span><span>✨</span><span>🎈</span><span>🎉</span>
+          <span>⭐</span><span>🎁</span><span>🎊</span><span>✨</span>
+        </div>
+        <h2>¡Feliz cumple, Fruti!</h2>
+        <p>
+          ¡Hoy es el día de celebrar a una persona increíble: tú! Espero que tengas un cumpleaños
+          lleno de risas, abrazos, pastel y todas esas pequeñas cosas que te hacen feliz.
+        </p>
+        <p>
+          Gracias por tu amistad, por tu buena onda y por hacer más bonitos los días de quienes
+          tenemos la suerte de conocerte. Ojalá este nuevo año te traiga aventuras divertidas,
+          sueños cumplidos, muchas sorpresas lindas y un montón de motivos para sonreír.
+        </p>
+        <p>
+          Que hoy te consientan muchísimo, que el pastel tenga una porción extra para ti y que
+          nunca te falten personas que te quieran y te hagan reír. ¡Te deseo lo mejor hoy y siempre!
+        </p>
+        <p class="postscript"><strong>P. D.:</strong> Fruti, no soy muy bueno con los regalos, así que armé esta carta con algunas cosas que me gustan. Me gusta jugar Minecraft contigo y también quería compartirte esta canción: tal vez no sea tu estilo, pero a mí me gusta. No recuerdo bien qué día es tu cumple 😅, pero quería celebrarte igual.</p>
+      </div>
+      <button class="envelope" id="open-card" type="button" aria-expanded="false">
+        <span class="envelope-decor" aria-hidden="true">🎈<span>🎉</span><span>🎁</span><span>⭐</span></span>
+        <span class="envelope-label">Toca para abrir tu carta 💌</span>
+      </button>
+    </div>
+    <p class="hint" id="hint" aria-live="polite"></p>
+
+    
+  </main>
+  <script src="assets/script.js" defer></script>
+</body>
+</html>
