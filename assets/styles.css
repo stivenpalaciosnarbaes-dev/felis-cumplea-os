@@ -1,0 +1,303 @@
+:root {
+      color-scheme: light;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+      color: #44264f;
+      background: #fff2d8;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      overflow-x: hidden;
+      background: linear-gradient(140deg, #fff2d8, #ffe2ed 55%, #e9e1ff);
+    }
+
+    button, input { font: inherit; }
+
+    .background-video {
+      position: fixed;
+      z-index: 0;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: .35;
+      pointer-events: none;
+    }
+
+    .party-decor {
+      position: fixed;
+      z-index: 1;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .party-decor span {
+      position: absolute;
+      display: grid;
+      width: 28px;
+      height: 28px;
+      place-items: center;
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      line-height: 1;
+      opacity: .85;
+    }
+
+    .pink-circles {
+      position: fixed;
+      z-index: 1;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .pink-circles span {
+      position: absolute;
+      width: 38px;
+      height: 38px;
+      border: 4px solid #ffb1c2;
+      border-radius: 50%;
+      opacity: .85;
+    }
+
+    .scene {
+      position: relative;
+      z-index: 2;
+      width: min(94vw, 680px);
+      padding: 32px 16px;
+      text-align: center;
+    }
+
+    .top-video-stickers {
+      position: absolute;
+      z-index: 3;
+      top: 100px;
+      left: 50%;
+      display: flex;
+      gap: 8px;
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+
+    .top-video-sticker {
+      width: 110px;
+      height: 110px;
+      border: 4px solid white;
+      border-radius: 20px;
+      box-shadow: 0 5px 12px #44264f30;
+      object-fit: cover;
+    }
+
+    .scene.card-open .top-video-stickers {
+      top: 0;
+      left: 0;
+      transform: none;
+    }
+
+    .scene.card-open .top-video-sticker {
+      width: 44px;
+      height: 44px;
+    }
+
+    @media (max-width: 500px) {
+      .top-video-sticker {
+        width: calc(23.5vw - 14px);
+        height: calc(23.5vw - 14px);
+      }
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: #86559a;
+      font-size: .9rem;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin: 52px 0 8px;
+      color: #e94d82;
+      font-size: clamp(1.2rem, 6.5vw, 2.8rem);
+      font-weight: 900;
+      line-height: 1.05;
+      text-align: center;
+      white-space: nowrap;
+      transform: translateY(130px);
+      transition: transform .7s ease;
+      text-shadow: 3px 4px 0 #fff;
+    }
+
+    .scene.card-open h1 { transform: translateY(-36px); }
+
+    .envelope-wrap {
+      position: relative;
+      min-height: 420px;
+      display: grid;
+      place-items: end center;
+      perspective: 1000px;
+    }
+
+    .envelope {
+      position: relative;
+      width: min(100%, 480px);
+      height: 275px;
+      border: 0;
+      border-radius: 12px;
+      background: #ff8eaa;
+      box-shadow: 0 16px 0 #e76d91, 0 24px 35px #734c6630;
+      cursor: pointer;
+      isolation: isolate;
+    }
+
+    .envelope-decor {
+      position: absolute;
+      z-index: 3;
+      inset: 12px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      place-items: center;
+      font-size: 1.8rem;
+      opacity: .3;
+      pointer-events: none;
+    }
+
+    .envelope::before,
+    .envelope::after {
+      position: absolute;
+      z-index: 2;
+      inset: 0;
+      content: "";
+      pointer-events: none;
+    }
+
+    .envelope::before {
+      background: #ffb1c2;
+      clip-path: polygon(0 0, 50% 62%, 100% 0);
+      transform-origin: top;
+      transition: transform .65s ease;
+    }
+
+    .envelope::after {
+      background: #ff7c9f;
+      clip-path: polygon(0 100%, 50% 42%, 100% 100%);
+    }
+
+    .envelope-label {
+      position: absolute;
+      z-index: 4;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      padding: 12px;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 900;
+      text-shadow: 0 2px 4px #b74366;
+      transform: translate(-50%, -50%);
+    }
+
+    .letter {
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      bottom: 12px;
+      width: 100%;
+      min-height: 320px;
+      max-height: 70vh;
+      padding: 32px 26px;
+      border: 3px solid #fff;
+      border-radius: 14px;
+      background: #fffdf8;
+      box-shadow: 0 8px 20px #593c5520, 0 0 0 16px #ffe276;
+      overflow-y: auto;
+      opacity: 0;
+      transform: translateY(45px);
+      transition: transform .7s ease, opacity .4s ease;
+      text-align: center;
+      isolation: isolate;
+      pointer-events: none;
+    }
+
+    .letter-decor {
+      position: absolute;
+      z-index: 0;
+      inset: 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      place-items: center;
+      font-size: 1.8rem;
+      opacity: .14;
+      pointer-events: none;
+    }
+
+    .letter h2,
+    .letter p {
+      position: relative;
+      z-index: 1;
+    }
+
+    .opened .envelope::before { transform: rotateX(180deg); }
+    .opened .letter {
+      opacity: 1;
+      transform: translateY(10px);
+      transition-delay: .2s;
+      pointer-events: auto;
+    }
+    .opened .envelope-label { opacity: 0; }
+
+    .letter h2 {
+      margin: 0 0 10px;
+      color: #ed5289;
+      font-size: clamp(1.55rem, 5vw, 2.1rem);
+    }
+
+    .letter p {
+      max-width: 52ch;
+      margin: 0 auto 14px;
+      color: #000;
+      font-size: clamp(1rem, 3.8vw, 1.08rem);
+      line-height: 1.55;
+      text-align: left;
+    }
+
+    .letter .postscript {
+      padding-top: 12px;
+      border-top: 1px solid #f0c4d2;
+    }
+
+    .hint {
+      margin: 22px 0 0;
+      color: #ed5289;
+      font-weight: 700;
+    }
+
+    .confetti {
+      position: fixed;
+      z-index: 5;
+      top: -20px;
+      width: 10px;
+      height: 14px;
+      border-radius: 3px;
+      pointer-events: none;
+      animation: fall 2.8s linear forwards;
+    }
+
+    @keyframes fall {
+      to { transform: translate(var(--drift), 110vh) rotate(760deg); opacity: .8; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
